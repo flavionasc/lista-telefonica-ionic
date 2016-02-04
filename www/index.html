@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Teste</title>
+    <!--importa arquivo do bootstrap css-->
+    <link href="css/bootstrap-3.3.6-dist/css/bootstrap.css" rel="stylesheet"> 
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <!--importar arquivos js-->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+    
+  <body ng-app="starter">
+                                    <!--diretiva angularjs dependencia do controller-->
+            <div class ="jumbotron" ng-controller ="AppCtrl">
+            <h3>{{app}}</h3>
+            <table class="table table-striped">
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                </tr>
+                <tr ng-repeat="contato in contatos">
+                <td>{{contato.nome}}</td>
+                <td>{{contato.telefone}}</td>
+                 </tr>
+            </table>
+            <hr/>
+            <input class="form-control" type="text" ng-model ="contato.nome" placeholder="Nome"/>
+            <input class="form-control" type="text" ng-model ="contato.telefone" placeholder= "telefone"/>
+            <button class="btn btn-primary btn-block" ng-click="adcionarContato(contato)">Adicionar Contato</button>
+        </div>
+    
+  </body>
+</html>
